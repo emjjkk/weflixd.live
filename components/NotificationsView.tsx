@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import Image from '@/components/RemoteImage';
 import Link from 'next/link';
 import { Bell, CheckCircle2, MessageSquare, Star } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';

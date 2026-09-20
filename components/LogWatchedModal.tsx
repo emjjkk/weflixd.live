@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Image from '@/components/RemoteImage';
 import { X, Star, Heart, Calendar, Check } from 'lucide-react';
 import { useModal } from '@/context/ModalContext';
 import { useMedia } from '@/context/MediaContext';

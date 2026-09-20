@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from '@/components/RemoteImage';
 import { Star, ThumbsUp, ThumbsDown, MessageSquare } from 'lucide-react';
 import { useMedia } from '@/context/MediaContext';
 

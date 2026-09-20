@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Image from '@/components/RemoteImage';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 import { Star, Play, Bookmark, Eye, ChevronLeft, ChevronRight } from 'lucide-react';

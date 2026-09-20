@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import Image from 'next/image';
+import Image from '@/components/RemoteImage';
 import Link from 'next/link';
 import { X, Star, Bookmark, Check, ArrowRight, Eye, Play, ExternalLink } from 'lucide-react';
 import { useModal } from '@/context/ModalContext';

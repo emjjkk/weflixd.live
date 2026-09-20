@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from '@/components/RemoteImage';
 import { useRouter } from 'next/navigation';
 import { Search, Heart, Bookmark, User, Settings, LogOut, Sun, Moon, Menu, X, ChevronDown, Bell } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';

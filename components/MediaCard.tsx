@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
+import Image from '@/components/RemoteImage';
 import { Star, Bookmark, Eye, Check } from 'lucide-react';
 import { MediaItem } from '@/lib/types';
 import { useModal } from '@/context/ModalContext';

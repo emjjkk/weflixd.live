@@ -97,7 +97,7 @@ async function fetchFreshFromTMDB<T>(
     }
 
     for (let attempt = 0; attempt < 3; attempt += 1) {
-      const res = await fetch(url, { headers, next: { revalidate: 3600 } });
+      const res = await fetch(url, { headers, cache: 'no-store' });
       if (res.ok) {
         const data = await res.json() as T;
         await setCached(cacheKey, data, 3600);

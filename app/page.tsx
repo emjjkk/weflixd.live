@@ -7,7 +7,7 @@ import RecommendedShelf from '@/components/RecommendedShelf';
 import RecentReviewsFeed from '@/components/RecentReviewsFeed';
 import { getTrendingMedia, getTrendingPeople, getPopularMovies } from '@/lib/tmdb';
 
-export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
   const results = await Promise.allSettled([

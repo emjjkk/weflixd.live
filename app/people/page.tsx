@@ -4,7 +4,7 @@ import { getPopularPeople } from '@/lib/tmdb';
 import type { Metadata } from 'next';
 import { createMetadata } from '@/lib/seo';
 
-export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = createMetadata({
   title: 'Explore People',

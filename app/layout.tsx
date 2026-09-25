@@ -15,6 +15,8 @@ import SocialShareModal from '@/components/SocialShareModal';
 import AuthPromptModal from '@/components/AuthPromptModal';
 import { DEFAULT_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/seo';
 
+export const dynamic = 'force-dynamic';
+
 const outfit = Geist({
   subsets: ['latin'],
   display: 'swap',

@@ -6,7 +6,7 @@ interface ProfilePageProps {
   params: Promise<{ username: string }>;
 }
 
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 export const metadata: Metadata = { title: 'Profile | Weflixd' };
 
 export default async function ProfilePage({ params }: ProfilePageProps) {

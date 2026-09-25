@@ -16,6 +16,15 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+function isDiscordAvatarUrl(value: string): boolean {
+  try {
+    const hostname = new URL(value).hostname;
+    return hostname === 'cdn.discordapp.com' || hostname === 'media.discordapp.net' || hostname === 'discordapp.com';
+  } catch {
+    return false;
+  }
+}
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<UserProfile | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -66,16 +75,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     if (requestId === profileRequestRef.current) {
       if (dbProfile) {
+        const discordAvatarChanged =
+          fallbackProfile.provider === 'discord' &&
+          Boolean(fallbackProfile.avatar_url) &&
+          (!dbProfile.avatar_url || isDiscordAvatarUrl(dbProfile.avatar_url)) &&
+          dbProfile.avatar_url !== fallbackProfile.avatar_url;
         const metadataProfile = {
           ...dbProfile,
           username: dbProfile.username || fallbackProfile.username,
           display_name: dbProfile.display_name || fallbackProfile.display_name,
-          avatar_url: dbProfile.avatar_url || fallbackProfile.avatar_url,
+          avatar_url: discordAvatarChanged ? fallbackProfile.avatar_url : dbProfile.avatar_url || fallbackProfile.avatar_url,
           bio: dbProfile.bio || fallbackProfile.bio,
           provider: dbProfile.provider || fallbackProfile.provider,
         };
 
         setUser(metadataProfile);
+
+        if (discordAvatarChanged) {
+          void upsertUserProfileDB({ ...dbProfile, avatar_url: metadataProfile.avatar_url });
+        }
 
         const authMeta = authUser.user_metadata || {};
         const needsMetadataSync =

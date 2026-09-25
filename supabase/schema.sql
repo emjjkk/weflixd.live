@@ -104,7 +104,6 @@ CREATE TABLE IF NOT EXISTS public.reviews (
   user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE NOT NULL,
   username TEXT NOT NULL,
   display_name TEXT,
-  user_avatar TEXT,
   media_id INTEGER NOT NULL,
   media_type TEXT NOT NULL CHECK (media_type IN ('movie', 'tv')),
   media_title TEXT NOT NULL,

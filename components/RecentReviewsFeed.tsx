@@ -63,7 +63,7 @@ export default function RecentReviewsFeed() {
                     className="relative w-8 h-8 rounded-full overflow-hidden border border-zinc-200 dark:border-zinc-700 flex-shrink-0"
                   >
                     <Image
-                      src={rev.user_avatar || rev.avatar_url || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'}
+                      src={rev.avatar_url || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'}
                       alt={rev.username}
                       fill
                       className="object-cover"

@@ -101,7 +101,6 @@ export interface ReviewItem {
   user_id: string;
   username: string;
   display_name?: string;
-  user_avatar?: string;
   avatar_url?: string;
   rating: number; // 1-5
   content: string;
@@ -396,12 +395,14 @@ export async function fetchFollowingActivityDB(userId: string): Promise<Activity
     const ids = (follows || []).map(follow => follow.following_id);
     if (ids.length === 0) return [];
 
-    const [{ data: reviews, error: reviewsError }, { data: watched, error: watchedError }] = await Promise.all([
+    const [{ data: reviews, error: reviewsError }, { data: watched, error: watchedError }, { data: profiles }] = await Promise.all([
       supabase.from('reviews').select('*').in('user_id', ids).order('created_at', { ascending: false }).limit(50),
       supabase.from('watched').select('*').in('user_id', ids).order('created_at', { ascending: false }).limit(50),
+      supabase.from('profiles').select('id, avatar_url').in('id', ids),
     ]);
     if (reviewsError) throw reviewsError;
     if (watchedError) throw watchedError;
+    const avatarsByUserId = new Map((profiles || []).map(profile => [profile.id, profile.avatar_url || '']));
 
     return [
       ...(reviews || []).map(review => ({
@@ -410,7 +411,7 @@ export async function fetchFollowingActivityDB(userId: string): Promise<Activity
         user_id: review.user_id,
         username: review.username,
         display_name: review.display_name,
-        user_avatar: review.user_avatar,
+        user_avatar: avatarsByUserId.get(review.user_id) || '',
         media_id: review.media_id,
         media_type: review.media_type,
         media_title: review.media_title,
@@ -529,6 +530,13 @@ export async function fetchReviewsDB(options?: {
 
     const { data, error } = await query;
     if (error) throw error;
+    const rows = data || [];
+    const userIds = [...new Set(rows.map((row: any) => row.user_id).filter(Boolean))];
+    const { data: profiles } = userIds.length
+      ? await supabase.from('profiles').select('id, avatar_url, display_name').in('id', userIds)
+      : { data: [] };
+    const profilesById = new Map((profiles || []).map((profile: any) => [profile.id, profile]));
+
     return (data || []).map((r: any) => ({
       id: r.id,
       media_id: r.media_id,
@@ -537,8 +545,8 @@ export async function fetchReviewsDB(options?: {
       media_poster: r.media_poster,
       user_id: r.user_id,
       username: r.username,
-      display_name: r.display_name,
-      user_avatar: r.user_avatar,
+      display_name: profilesById.get(r.user_id)?.display_name || r.display_name,
+      avatar_url: profilesById.get(r.user_id)?.avatar_url || '',
       rating: Number(r.rating),
       content: r.content,
       watched_date: r.watched_date,
@@ -561,7 +569,6 @@ export async function insertReviewDB(review: Omit<ReviewItem, 'id' | 'created_at
         user_id: review.user_id,
         username: review.username,
         display_name: review.display_name || review.username,
-        user_avatar: review.user_avatar || review.avatar_url,
         media_id: review.media_id,
         media_type: review.media_type,
         media_title: review.media_title,

@@ -72,7 +72,7 @@ export default function HeroBanner({ items }: HeroBannerProps) {
             />
           )}
           {/* Light/Dark Mode Gradient Masks */}
-          <div className="absolute inset-0 bg-gradient-to-r from-zinc-50 via-zinc-50/50 to-transparent dark:from-zinc-950 dark:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-50 via-zinc-50/50 to-transparent dark:from-zinc-950 dark:via-zinc-950/0 dark:to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 via-transparent to-transparent dark:from-zinc-950 dark:via-transparent dark:to-zinc-950/30" />
         </motion.div>
       </AnimatePresence>

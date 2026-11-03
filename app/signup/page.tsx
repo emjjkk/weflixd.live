@@ -88,9 +88,6 @@ export default function SignUpPage() {
           <h1 className="text-2xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">
             Create Your Account
           </h1>
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">
-            Join the Weflixd community. Instant signup with no email verification required.
-          </p>
         </div>
 
         {/* Error Alert */}

@@ -175,6 +175,7 @@ npm run clean   # Clean the Next.js build cache
 
 - **Server-side TMDB proxy:** All TMDB requests go through `app/api/tmdb/*` routes rather than being called directly from the client, keeping the API key server-side and allowing response caching.
 - **Caching and rate limiting:** `lib/redis-cache.ts` caches TMDB responses in-process (default 1 hour TTL, with a stale fallback window) and enforces a token-bucket rate limit to avoid exceeding TMDB's request limits. This cache lives in server memory only — it resets on redeploy/restart and isn't shared across multiple server instances.
+- **Hosting-neutral request caching:** TMDB API responses use `private` browser cache headers only. They are intentionally not shared through a CDN and do not use Next.js ISR, so the app does not depend on Vercel CDN or ISR storage.
 - **Auth and profile sync:** `AuthContext` listens to Supabase auth state changes, loads or creates a matching row in `profiles`, and keeps Supabase Auth user metadata in sync with the profile table so the two never drift apart.
 - **Client-side state:** `MediaContext` holds the current user's watchlist, favorites, watched log, and reviews, reading from and writing to Supabase, with a Supabase Realtime subscription keeping the community reviews feed live.
 - **Image hosting:** Profile pictures and banners are uploaded through `app/api/upload/route.ts`, which proxies to the ImgBB API using a server-side key.
@@ -190,7 +191,7 @@ npm run clean   # Clean the Next.js build cache
 
 ## Deployment
 
-The app is built with `output: 'standalone'` in `next.config.ts`, making it straightforward to deploy to any Node-compatible host (Vercel, a container platform, etc.). Ensure all required environment variables are set in your hosting provider's configuration, and that your Supabase project's allowed redirect URLs include your production domain if using OAuth (Discord). Because the TMDB response cache is in-memory, expect a brief warm-up period after each deploy or restart, and note that it does not stay in sync across multiple concurrent server instances.
+The app is built with `output: 'standalone'` in `next.config.ts`, making it straightforward to deploy to any Node-compatible host (a container platform, VM, or managed Node service). The app does not use Vercel's image optimizer, shared CDN response caching, or ISR. Ensure all required environment variables are set in your hosting provider's configuration, and that your Supabase project's allowed redirect URLs include your production domain if using OAuth (Discord). Because the TMDB response cache is in-memory, expect a brief warm-up period after each deploy or restart, and note that it does not stay in sync across multiple concurrent server instances.
 
 ## Contributing
 

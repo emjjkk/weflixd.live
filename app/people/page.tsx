@@ -4,8 +4,6 @@ import { getPopularPeople } from '@/lib/tmdb';
 import type { Metadata } from 'next';
 import { createMetadata } from '@/lib/seo';
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = createMetadata({
   title: 'Explore People',
   description: 'Explore actors, directors, writers, and other film and television creators on Weflixd.',

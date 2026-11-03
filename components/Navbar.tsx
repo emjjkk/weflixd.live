@@ -206,7 +206,7 @@ export default function Navbar() {
                       )}
                     </div>
                     <span className="hidden sm:inline text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                      {user.username}
+                      {user.display_name}
                     </span>
                     <ChevronDown className="w-4 h-4 text-zinc-500" />
                   </button>

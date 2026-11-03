@@ -6,7 +6,6 @@ interface MoviePageProps {
   params: Promise<{ id: string }>;
 }
 
-export const dynamic = 'force-dynamic';
 export const metadata: Metadata = { title: 'Movie details | Weflixd' };
 
 export default function MovieDetailPage() {

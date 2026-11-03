@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getMediaDetails } from '@/lib/tmdb';
+import { tmdbJson } from '@/lib/tmdb-response';
 
 export async function GET(
   _req: NextRequest,
@@ -15,7 +16,7 @@ export async function GET(
     if (!media) {
       return NextResponse.json({ error: 'Media not found' }, { status: 404 });
     }
-    return NextResponse.json(media);
+    return tmdbJson(media, 3600);
   } catch (err: any) {
     console.error('[API tmdb/details error]:', err);
     return NextResponse.json({ error: err?.message || 'Failed to fetch media details' }, { status: 500 });

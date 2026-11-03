@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getPersonDetails } from '@/lib/tmdb';
+import { tmdbJson } from '@/lib/tmdb-response';
 
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -10,7 +11,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   try {
     const person = await getPersonDetails(Number(id));
     return person
-      ? NextResponse.json(person)
+      ? tmdbJson(person, 3600)
       : NextResponse.json({ error: 'Person not found' }, { status: 404 });
   } catch (err: any) {
     console.error('[API tmdb/person error]:', err);

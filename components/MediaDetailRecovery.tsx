@@ -20,7 +20,7 @@ export default function MediaDetailRecovery({ mediaType, mediaId }: MediaDetailR
     const load = async () => {
       for (let attempt = 0; attempt < 3; attempt += 1) {
         try {
-          const response = await fetch(`/api/tmdb/${mediaType}/${mediaId}`, { cache: 'no-store' });
+          const response = await fetch(`/api/tmdb/${mediaType}/${mediaId}`);
           if (response.ok) {
             const result = (await response.json()) as MediaItem;
             if (!cancelled) {

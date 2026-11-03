@@ -5,8 +5,6 @@ import { getPopularMovies } from '@/lib/tmdb';
 import type { Metadata } from 'next';
 import { createMetadata } from '@/lib/seo';
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = createMetadata({
   title: 'Explore Movies',
   description: 'Browse popular movies, new releases, genres, ratings, reviews, and watchlists on Weflixd.',

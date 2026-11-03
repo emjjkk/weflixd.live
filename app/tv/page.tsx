@@ -5,8 +5,6 @@ import { getPopularTV } from '@/lib/tmdb';
 import type { Metadata } from 'next';
 import { createMetadata } from '@/lib/seo';
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = createMetadata({
   title: 'Explore TV Shows',
   description: 'Discover popular TV shows, new series, genres, ratings, reviews, and watchlists on Weflixd.',

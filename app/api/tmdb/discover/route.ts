@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getPopularMovies, getPopularTV, searchAll } from '@/lib/tmdb';
+import { tmdbJson } from '@/lib/tmdb-response';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -15,7 +16,7 @@ export async function GET(req: NextRequest) {
       // Direct TMDB live search filtered by media type
       const searchRes = await searchAll(query.trim());
       const filtered = type === 'movie' ? searchRes.movies : searchRes.tv;
-      return NextResponse.json({
+      return tmdbJson({
         results: filtered,
         total_pages: 1,
         total_results: filtered.length,
@@ -24,10 +25,10 @@ export async function GET(req: NextRequest) {
 
     if (type === 'tv') {
       const data = await getPopularTV({ page, genre, sortBy, country });
-      return NextResponse.json(data);
+      return tmdbJson(data, 300);
     } else {
       const data = await getPopularMovies({ page, genre, sortBy, country });
-      return NextResponse.json(data);
+      return tmdbJson(data, 300);
     }
   } catch (err: any) {
     console.error('[API tmdb/discover error]:', err);

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getPersonDetails } from '@/lib/tmdb';
 import { tmdbJson } from '@/lib/tmdb-response';
 
+export const revalidate = 86400;
+
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   if (!/^\d+$/.test(id)) {

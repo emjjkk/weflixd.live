@@ -27,14 +27,12 @@ export default function CurrentUserProfilePage() {
         <div className="flex justify-center gap-3 pt-2">
           <Link
             href="/login"
-            className="px-4 py-2 text-xs font-semibold rounded-md border border-zinc-300 dark:border-zinc-700"
-          >
+            className="px-4 py-2 text-xs font-semibold rounded-md border border-zinc-300 dark:border-zinc-700" prefetch={false}>
             Log in
           </Link>
           <Link
             href="/signup"
-            className="px-4 py-2 text-xs font-semibold rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900"
-          >
+            className="px-4 py-2 text-xs font-semibold rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900" prefetch={false}>
             Sign up
           </Link>
         </div>

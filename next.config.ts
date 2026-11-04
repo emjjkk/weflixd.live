@@ -4,7 +4,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
-    unoptimized: true,
+    deviceSizes: [640, 1080, 1920],
+    imageSizes: [256, 384, 640],
+    formats: ['image/webp'],
+    minimumCacheTTL: 31536000,
   },
   turbopack: {},
   typescript: {

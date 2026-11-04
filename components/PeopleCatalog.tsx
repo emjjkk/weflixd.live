@@ -109,8 +109,7 @@ export default function PeopleCatalog({ initialPeople, totalPages = 1 }: PeopleC
           <Link
             key={person.id}
             href={`/people/${person.id}`}
-            className="group flex flex-col p-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-xs"
-          >
+            className="group flex flex-col p-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-xs" prefetch={false}>
             <div className="relative w-full aspect-square rounded-full overflow-hidden bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 mx-auto">
               {person.profile_path ? (
                 <Image

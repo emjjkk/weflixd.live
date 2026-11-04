@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getMediaDetails } from '@/lib/tmdb';
 import { tmdbJson } from '@/lib/tmdb-response';
 
+export const revalidate = 86400;
+
 export async function GET(
   _req: NextRequest,
   { params }: { params: Promise<{ type: string; id: string }> }

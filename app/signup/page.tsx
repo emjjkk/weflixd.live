@@ -69,8 +69,7 @@ export default function SignUpPage() {
         <p className="text-sm text-zinc-500">You are already signed in as @{user.username}.</p>
         <Link
           href={`/profile/${user.username}`}
-          className="inline-block px-4 py-2 text-xs font-semibold rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900"
-        >
+          className="inline-block px-4 py-2 text-xs font-semibold rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900" prefetch={false}>
           Go to Profile
         </Link>
       </div>
@@ -226,7 +225,7 @@ export default function SignUpPage() {
         {/* Footer link */}
         <div className="pt-2 text-center text-xs text-zinc-500 dark:text-zinc-400">
           Already have an account?{' '}
-          <Link href="/login" className="font-bold text-zinc-900 dark:text-zinc-100 hover:underline">
+          <Link href="/login" className="font-bold text-zinc-900 dark:text-zinc-100 hover:underline" prefetch={false}>
             Log in
           </Link>
         </div>

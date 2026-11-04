@@ -11,8 +11,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="px-5 py-2.5 rounded-lg bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-medium text-sm hover:opacity-90 transition-opacity"
-      >
+        className="px-5 py-2.5 rounded-lg bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-medium text-sm hover:opacity-90 transition-opacity" prefetch={false}>
         Back to Home
       </Link>
     </div>

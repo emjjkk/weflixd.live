@@ -495,8 +495,7 @@ export default function MediaDetailView({ media }: MediaDetailViewProps) {
               </h2>
               <Link
                 href="/people"
-                className="text-xs font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
-              >
+                className="text-xs font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-white" prefetch={false}>
                 View all actors →
               </Link>
             </div>
@@ -506,8 +505,7 @@ export default function MediaDetailView({ media }: MediaDetailViewProps) {
                 <Link
                   key={person.id}
                   href={`/people/${person.id}`}
-                  className="group flex flex-col w-28 sm:w-32 flex-shrink-0"
-                >
+                  className="group flex flex-col w-28 sm:w-32 flex-shrink-0" prefetch={false}>
                   <div className="relative w-full aspect-[2/3] rounded-lg overflow-hidden bg-zinc-200 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-800 group-hover:border-zinc-400 transition-colors shadow-xs">
                     {person.profile_path ? (
                       <Image
@@ -577,8 +575,7 @@ export default function MediaDetailView({ media }: MediaDetailViewProps) {
                     <div className="flex items-center gap-3">
                       <Link
                         href={`/profile/${rev.username}`}
-                        className="relative w-9 h-9 rounded-full overflow-hidden border border-zinc-200 dark:border-zinc-700 flex-shrink-0"
-                      >
+                        className="relative w-9 h-9 rounded-full overflow-hidden border border-zinc-200 dark:border-zinc-700 flex-shrink-0" prefetch={false}>
                         <Image
                           src={rev.avatar_url || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'}
                           alt={rev.username}
@@ -590,8 +587,7 @@ export default function MediaDetailView({ media }: MediaDetailViewProps) {
                       <div>
                         <Link
                           href={`/profile/${rev.username}`}
-                          className="text-xs font-bold text-zinc-900 dark:text-zinc-100 hover:underline"
-                        >
+                          className="text-xs font-bold text-zinc-900 dark:text-zinc-100 hover:underline" prefetch={false}>
                           @{rev.username}
                         </Link>
                         <p className="text-[11px] text-zinc-400">

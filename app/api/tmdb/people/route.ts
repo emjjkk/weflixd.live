@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getPopularPeople, searchPeople } from '@/lib/tmdb';
 import { tmdbJson } from '@/lib/tmdb-response';
 
+export const revalidate = 86400;
+
 export async function GET(req: NextRequest) {
   const page = Math.max(1, Number(new URL(req.url).searchParams.get('page') || '1'));
   const query = new URL(req.url).searchParams.get('query')?.trim() || '';

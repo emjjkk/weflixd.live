@@ -78,8 +78,7 @@ function FollowList({
               <Link
                 key={profile.id}
                 href={`/profile/${encodeURIComponent(profile.username)}`}
-                className="flex items-center gap-3 rounded-lg border border-zinc-200 dark:border-zinc-800 p-3 hover:bg-zinc-50 dark:hover:bg-zinc-800/70 transition-colors"
-              >
+                className="flex items-center gap-3 rounded-lg border border-zinc-200 dark:border-zinc-800 p-3 hover:bg-zinc-50 dark:hover:bg-zinc-800/70 transition-colors" prefetch={false}>
                 <div className="relative w-9 h-9 rounded-full overflow-hidden bg-zinc-200 dark:bg-zinc-800 flex-shrink-0 flex items-center justify-center">
                   {profile.avatar_url ? (
                     <Image src={profile.avatar_url} alt={profile.username} fill className="object-cover" referrerPolicy="no-referrer" />
@@ -206,8 +205,7 @@ export default function UserProfileView({ username }: UserProfileViewProps) {
         <div className="pt-2">
           <Link
             href="/"
-            className="inline-flex px-4 py-2 text-xs font-semibold rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900"
-          >
+            className="inline-flex px-4 py-2 text-xs font-semibold rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900" prefetch={false}>
             Return to Home
           </Link>
         </div>
@@ -326,8 +324,7 @@ export default function UserProfileView({ username }: UserProfileViewProps) {
           {isCurrentUser && (
             <Link
               href="/settings"
-              className="sm:mt-12 inline-flex items-center gap-2 px-4 py-2 rounded-md border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 text-sm font-semibold text-zinc-700 dark:text-zinc-300 transition-colors ml-auto sm:ml-2"
-            >
+              className="sm:mt-12 inline-flex items-center gap-2 px-4 py-2 rounded-md border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 text-sm font-semibold text-zinc-700 dark:text-zinc-300 transition-colors ml-auto sm:ml-2" prefetch={false}>
               <Settings className="w-3.5 h-3.5" />
               <span>Edit Profile</span>
             </Link>
@@ -410,7 +407,7 @@ export default function UserProfileView({ username }: UserProfileViewProps) {
                 {visibleFavorites.map(item => {
                   if (item.media_type === 'person') {
                     return (
-                      <Link key={`person-${item.media_id}`} href={`/people/${item.media_id}`} className="group space-y-2">
+                      <Link key={`person-${item.media_id}`} href={`/people/${item.media_id}`} className="group space-y-2" prefetch={false}>
                         <div className="relative aspect-[2/3] rounded-xl overflow-hidden bg-zinc-200 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-800">
                           {item.poster_path ? <Image src={item.poster_path} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform" referrerPolicy="no-referrer" /> : null}
                         </div>
@@ -445,8 +442,7 @@ export default function UserProfileView({ username }: UserProfileViewProps) {
                 </p>
                 <Link
                   href="/movie"
-                  className="inline-block mt-2 px-4 py-2 text-xs font-semibold rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900"
-                >
+                  className="inline-block mt-2 px-4 py-2 text-xs font-semibold rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900" prefetch={false}>
                   Browse Movies
                 </Link>
               </div>
@@ -469,8 +465,7 @@ export default function UserProfileView({ username }: UserProfileViewProps) {
                       <div className="flex items-center gap-4 min-w-0">
                         <Link
                           href={mediaLink}
-                          className="relative w-14 h-20 rounded-md overflow-hidden bg-zinc-800 flex-shrink-0 border border-zinc-200 dark:border-zinc-700"
-                        >
+                          className="relative w-14 h-20 rounded-md overflow-hidden bg-zinc-800 flex-shrink-0 border border-zinc-200 dark:border-zinc-700" prefetch={false}>
                           {log.poster_path ? (
                             <Image
                               src={log.poster_path}
@@ -484,8 +479,7 @@ export default function UserProfileView({ username }: UserProfileViewProps) {
                         <div className="min-w-0 space-y-1">
                           <Link
                             href={mediaLink}
-                            className="text-sm font-bold text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 truncate block"
-                          >
+                            className="text-sm font-bold text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 truncate block" prefetch={false}>
                             {log.title || log.media_title}
                           </Link>
                           <div className="flex items-center gap-2 text-xs text-zinc-500">
@@ -575,8 +569,7 @@ export default function UserProfileView({ username }: UserProfileViewProps) {
                       <div>
                         <Link
                           href={`/${rev.media_type}/${rev.media_id}`}
-                          className="text-sm font-bold text-zinc-900 dark:text-zinc-100 hover:underline"
-                        >
+                          className="text-sm font-bold text-zinc-900 dark:text-zinc-100 hover:underline" prefetch={false}>
                           {rev.media_title}
                         </Link>
                         <p className="text-[11px] text-zinc-500">

@@ -295,7 +295,7 @@ export default function PersonDetailView({ person }: PersonDetailViewProps) {
                     >
                       {/* Poster */}
                       <td className="py-2.5 px-4">
-                        <Link href={link} className="block relative w-9 h-13 rounded overflow-hidden bg-zinc-200 dark:bg-zinc-800 flex-shrink-0">
+                        <Link href={link} className="block relative w-9 h-13 rounded overflow-hidden bg-zinc-200 dark:bg-zinc-800 flex-shrink-0" prefetch={false}>
                           {credit.poster_path ? (
                             <Image
                               src={credit.poster_path}
@@ -310,7 +310,7 @@ export default function PersonDetailView({ person }: PersonDetailViewProps) {
 
                       {/* Title */}
                       <td className="py-2.5 px-4 font-semibold text-zinc-900 dark:text-zinc-100">
-                        <Link href={link} className="hover:text-blue-600 dark:hover:text-blue-400">
+                        <Link href={link} className="hover:text-blue-600 dark:hover:text-blue-400" prefetch={false}>
                           {credit.title}
                         </Link>
                       </td>

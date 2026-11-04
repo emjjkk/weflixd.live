@@ -261,8 +261,7 @@ export default function QuickViewModal() {
               id="modal-btn-learn-more"
               onClick={closeQuickView}
               className="flex items-center gap-2 px-5 py-2 text-sm font-semibold rounded-md text-white shadow-xs transition-opacity hover:opacity-90"
-              style={{ backgroundColor: palette.dominant }}
-            >
+              style={{ backgroundColor: palette.dominant }} prefetch={false}>
               <span>Learn More</span>
               <ArrowRight className="w-4 h-4" />
             </Link>

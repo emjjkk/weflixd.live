@@ -26,27 +26,27 @@ export default function Footer() {
             </h4>
             <ul className="space-y-1.5 text-xs">
               <li>
-                <Link href="/" className="hover:text-zinc-900 dark:hover:text-white transition-colors">
+                <Link href="/" className="hover:text-zinc-900 dark:hover:text-white transition-colors" prefetch={false}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/movie" className="hover:text-zinc-900 dark:hover:text-white transition-colors">
+                <Link href="/movie" className="hover:text-zinc-900 dark:hover:text-white transition-colors" prefetch={false}>
                   Movies
                 </Link>
               </li>
               <li>
-                <Link href="/tv" className="hover:text-zinc-900 dark:hover:text-white transition-colors">
+                <Link href="/tv" className="hover:text-zinc-900 dark:hover:text-white transition-colors" prefetch={false}>
                   TV Shows
                 </Link>
               </li>
               <li>
-                <Link href="/people" className="hover:text-zinc-900 dark:hover:text-white transition-colors">
+                <Link href="/people" className="hover:text-zinc-900 dark:hover:text-white transition-colors" prefetch={false}>
                   People & Cast
                 </Link>
               </li>
               <li>
-                <Link href="https://github.com/emjjkk/weflixd.live" className="hover:text-zinc-900 dark:hover:text-white transition-colors">
+                <Link href="https://github.com/emjjkk/weflixd.live" className="hover:text-zinc-900 dark:hover:text-white transition-colors" prefetch={false}>
                   Open Source
                 </Link>
               </li>

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getPopularMovies, getPopularTV, searchAll } from '@/lib/tmdb';
 import { tmdbJson } from '@/lib/tmdb-response';
 
+export const revalidate = 86400;
+
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const type = (searchParams.get('type') as 'movie' | 'tv') || 'movie';

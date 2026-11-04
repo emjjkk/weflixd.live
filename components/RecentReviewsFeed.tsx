@@ -38,8 +38,7 @@ export default function RecentReviewsFeed() {
           <div className="pt-1">
             <Link
               href="/movie"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-semibold bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-white transition-colors"
-            >
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-semibold bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-white transition-colors" prefetch={false}>
               Browse Movies to Review
             </Link>
           </div>
@@ -60,8 +59,7 @@ export default function RecentReviewsFeed() {
                 <div className="flex items-center gap-2.5">
                   <Link
                     href={`/profile/${rev.username}`}
-                    className="relative w-8 h-8 rounded-full overflow-hidden border border-zinc-200 dark:border-zinc-700 flex-shrink-0"
-                  >
+                    className="relative w-8 h-8 rounded-full overflow-hidden border border-zinc-200 dark:border-zinc-700 flex-shrink-0" prefetch={false}>
                     <Image
                       src={rev.avatar_url || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'}
                       alt={rev.username}
@@ -73,8 +71,7 @@ export default function RecentReviewsFeed() {
                   <div className="min-w-0">
                     <Link
                       href={`/profile/${rev.username}`}
-                      className="text-xs font-semibold text-zinc-900 dark:text-zinc-100 hover:underline truncate block"
-                    >
+                      className="text-xs font-semibold text-zinc-900 dark:text-zinc-100 hover:underline truncate block" prefetch={false}>
                       @{rev.username}
                     </Link>
                     <p className="text-[11px] text-zinc-400">
@@ -86,8 +83,7 @@ export default function RecentReviewsFeed() {
                 <div className="text-right">
                   <Link
                     href={`/${rev.media_type}/${rev.media_id}`}
-                    className="text-xs font-bold text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 block truncate max-w-[150px]"
-                  >
+                    className="text-xs font-bold text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 block truncate max-w-[150px]" prefetch={false}>
                     {rev.media_title}
                   </Link>
                   <div className="flex items-center justify-end text-amber-500 mt-0.5">
@@ -141,8 +137,7 @@ export default function RecentReviewsFeed() {
 
                 <Link
                   href={`/${rev.media_type}/${rev.media_id}`}
-                  className="flex items-center gap-1 text-[11px] font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white"
-                >
+                  className="flex items-center gap-1 text-[11px] font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white" prefetch={false}>
                   <MessageSquare className="w-3 h-3" />
                   <span>Join discussion</span>
                 </Link>

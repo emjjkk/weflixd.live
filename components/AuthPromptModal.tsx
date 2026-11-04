@@ -93,8 +93,7 @@ export default function AuthPromptModal() {
             href="/login"
             id="btn-auth-prompt-signin"
             onClick={closeAuthPrompt}
-            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-white text-white dark:text-zinc-900 font-bold text-sm shadow-md transition-all group"
-          >
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-white text-white dark:text-zinc-900 font-bold text-sm shadow-md transition-all group" prefetch={false}>
             <span>Sign In to Continue</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
@@ -115,8 +114,7 @@ export default function AuthPromptModal() {
             <Link
               href="/signup"
               onClick={closeAuthPrompt}
-              className="font-semibold text-zinc-900 dark:text-zinc-100 hover:underline"
-            >
+              className="font-semibold text-zinc-900 dark:text-zinc-100 hover:underline" prefetch={false}>
               Create an account
             </Link>
           </p>

@@ -52,8 +52,7 @@ export default function HorizontalShelf({
           {viewAllLink && (
             <Link
               href={viewAllLink}
-              className="text-xs font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white mr-2 transition-colors"
-            >
+              className="text-xs font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white mr-2 transition-colors" prefetch={false}>
               Explore all →
             </Link>
           )}

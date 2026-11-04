@@ -294,8 +294,7 @@ export default function SearchOverlay() {
                     key={movie.id}
                     href={`/movie/${movie.id}`}
                     onClick={closeSearch}
-                    className="group flex items-center gap-3 p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors"
-                  >
+                    className="group flex items-center gap-3 p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors" prefetch={false}>
                     <div className="relative w-12 h-16 rounded overflow-hidden flex-shrink-0 bg-zinc-200 dark:bg-zinc-800">
                       {movie.poster_path && (
                         <Image
@@ -352,8 +351,7 @@ export default function SearchOverlay() {
                     key={show.id}
                     href={`/tv/${show.id}`}
                     onClick={closeSearch}
-                    className="group flex items-center gap-3 p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors"
-                  >
+                    className="group flex items-center gap-3 p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors" prefetch={false}>
                     <div className="relative w-12 h-16 rounded overflow-hidden flex-shrink-0 bg-zinc-200 dark:bg-zinc-800">
                       {show.poster_path && (
                         <Image
@@ -405,8 +403,7 @@ export default function SearchOverlay() {
                     key={person.id}
                     href={`/people/${person.id}`}
                     onClick={closeSearch}
-                    className="group flex items-center gap-3 p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors"
-                  >
+                    className="group flex items-center gap-3 p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors" prefetch={false}>
                     <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-zinc-200 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
                       {person.profile_path ? (
                         <Image
@@ -451,8 +448,7 @@ export default function SearchOverlay() {
                     key={profile.id}
                     href={`/profile/${profile.username}`}
                     onClick={closeSearch}
-                    className="group flex items-center gap-3 p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors"
-                  >
+                    className="group flex items-center gap-3 p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors" prefetch={false}>
                     <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-zinc-200 dark:border-zinc-700">
                       <Image
                         src={profile.avatar_url}
@@ -491,8 +487,7 @@ export default function SearchOverlay() {
                     key={rev.id}
                     href={`/${rev.media_type}/${rev.media_id}`}
                     onClick={closeSearch}
-                    className="block p-3 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 border border-zinc-200 dark:border-zinc-800 transition-colors"
-                  >
+                    className="block p-3 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800 border border-zinc-200 dark:border-zinc-800 transition-colors" prefetch={false}>
                     <div className="flex items-center justify-between mb-1.5">
                       <div className="flex items-center gap-2">
                         <span className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">

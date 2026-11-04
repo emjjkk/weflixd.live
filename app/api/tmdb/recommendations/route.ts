@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getMediaRecommendations } from '@/lib/tmdb';
 import { tmdbJson } from '@/lib/tmdb-response';
 
+export const revalidate = 86400;
+
 export async function GET(req: NextRequest) {
   const params = new URL(req.url).searchParams;
   const type = params.get('type');

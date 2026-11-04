@@ -79,8 +79,7 @@ export default function Navbar() {
             <Link
               href="/"
               id="brand-logo"
-              className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 hover:opacity-90 transition-opacity"
-            >
+              className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 hover:opacity-90 transition-opacity" prefetch={false}>
               <Logo size={40}/>
             </Link>
 
@@ -89,8 +88,7 @@ export default function Navbar() {
               <Link
                 href="/"
                 id="nav-home"
-                className="px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white rounded-md transition-colors"
-              >
+                className="px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white rounded-md transition-colors" prefetch={false}>
                 Home
               </Link>
 
@@ -107,8 +105,7 @@ export default function Navbar() {
                     activeDropdown === 'movies'
                       ? 'text-zinc-950 dark:text-white bg-zinc-100 dark:bg-zinc-800'
                       : 'text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white'
-                  }`}
-                >
+                  }`} prefetch={false}>
                   Movies
                   <ChevronDown className="w-4 h-4 opacity-60" />
                 </Link>
@@ -127,8 +124,7 @@ export default function Navbar() {
                     activeDropdown === 'tv'
                       ? 'text-zinc-950 dark:text-white bg-zinc-100 dark:bg-zinc-800'
                       : 'text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white'
-                  }`}
-                >
+                  }`} prefetch={false}>
                   TV Shows
                   <ChevronDown className="w-4 h-4 opacity-60" />
                 </Link>
@@ -137,8 +133,7 @@ export default function Navbar() {
               <Link
                 href="/people"
                 id="nav-people"
-                className="px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white rounded-md transition-colors"
-              >
+                className="px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white rounded-md transition-colors" prefetch={false}>
                 People
               </Link>
             </nav>
@@ -179,8 +174,7 @@ export default function Navbar() {
                   href="/notifications"
                   id="nav-notifications"
                   className="p-2 text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-                  title="Notifications"
-                >
+                  title="Notifications" prefetch={false}>
                   <Bell className="w-5 h-5" />
                 </Link>
 
@@ -227,8 +221,7 @@ export default function Navbar() {
                       <Link
                         href={`/profile/${user.username}`}
                         onClick={() => setIsProfileMenuOpen(false)}
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
-                      >
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800" prefetch={false}>
                         <User className="w-4 h-4" />
                         Profile
                       </Link>
@@ -236,8 +229,7 @@ export default function Navbar() {
                       <Link
                         href={`/profile/${user.username}?tab=watchlist`}
                         onClick={() => setIsProfileMenuOpen(false)}
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
-                      >
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800" prefetch={false}>
                         <Bookmark className="w-4 h-4" />
                         Watchlist
                       </Link>
@@ -245,8 +237,7 @@ export default function Navbar() {
                       <Link
                         href={`/profile/${user.username}?tab=watched`}
                         onClick={() => setIsProfileMenuOpen(false)}
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
-                      >
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800" prefetch={false}>
                         <Heart className="w-4 h-4" />
                         Recently Watched
                       </Link>
@@ -255,8 +246,7 @@ export default function Navbar() {
                         href="/settings"
                         id="nav-settings-link"
                         onClick={() => setIsProfileMenuOpen(false)}
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
-                      >
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800" prefetch={false}>
                         <Settings className="w-4 h-4" />
                         Settings
                       </Link>
@@ -285,15 +275,13 @@ export default function Navbar() {
                 <Link
                   href="/login"
                   id="nav-login-btn"
-                  className="px-3.5 py-1.5 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-                >
+                  className="px-3.5 py-1.5 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors" prefetch={false}>
                   Log in
                 </Link>
                 <Link
                   href="/signup"
                   id="nav-signup-btn"
-                  className="px-3.5 py-1.5 text-sm font-medium text-white bg-zinc-900 dark:bg-zinc-100 dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-white rounded-md transition-colors shadow-xs"
-                >
+                  className="px-3.5 py-1.5 text-sm font-medium text-white bg-zinc-900 dark:bg-zinc-100 dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-white rounded-md transition-colors shadow-xs" prefetch={false}>
                   Sign up
                 </Link>
               </div>
@@ -330,8 +318,7 @@ export default function Navbar() {
                   <Link
                     href="/movie"
                     className="text-xs font-medium text-zinc-900 dark:text-zinc-100 hover:underline"
-                    onClick={() => setActiveDropdown(null)}
-                  >
+                    onClick={() => setActiveDropdown(null)} prefetch={false}>
                     View All Movies →
                   </Link>
                 </div>
@@ -341,8 +328,7 @@ export default function Navbar() {
                       key={genre.id}
                       href={`/movie?genres=${genre.slug}&page=1`}
                       onClick={() => setActiveDropdown(null)}
-                      className="px-3 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-md transition-colors"
-                    >
+                      className="px-3 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-md transition-colors" prefetch={false}>
                       {genre.name}
                     </Link>
                   ))}
@@ -360,8 +346,7 @@ export default function Navbar() {
                       key={country.code}
                       href={`/movie?country=${country.code}&page=1`}
                       onClick={() => setActiveDropdown(null)}
-                      className="px-3 py-1.5 text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-md transition-colors"
-                    >
+                      className="px-3 py-1.5 text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-md transition-colors" prefetch={false}>
                       {country.name}
                     </Link>
                   ))}
@@ -380,8 +365,7 @@ export default function Navbar() {
                     key={movie.id}
                     href={`/movie/${movie.id}`}
                     onClick={() => setActiveDropdown(null)}
-                    className="group flex gap-3 items-center p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800/60 transition-colors"
-                  >
+                    className="group flex gap-3 items-center p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800/60 transition-colors" prefetch={false}>
                     <div className="relative w-12 h-16 rounded overflow-hidden flex-shrink-0 bg-zinc-200 dark:bg-zinc-800">
                       {movie.poster_path && (
                         <Image
@@ -428,8 +412,7 @@ export default function Navbar() {
                   <Link
                     href="/tv"
                     className="text-xs font-medium text-zinc-900 dark:text-zinc-100 hover:underline"
-                    onClick={() => setActiveDropdown(null)}
-                  >
+                    onClick={() => setActiveDropdown(null)} prefetch={false}>
                     View All TV Shows →
                   </Link>
                 </div>
@@ -439,8 +422,7 @@ export default function Navbar() {
                       key={genre.id}
                       href={`/tv?genres=${genre.slug}&page=1`}
                       onClick={() => setActiveDropdown(null)}
-                      className="px-3 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-md transition-colors"
-                    >
+                      className="px-3 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-md transition-colors" prefetch={false}>
                       {genre.name}
                     </Link>
                   ))}
@@ -458,8 +440,7 @@ export default function Navbar() {
                       key={country.code}
                       href={`/tv?country=${country.code}&page=1`}
                       onClick={() => setActiveDropdown(null)}
-                      className="px-3 py-1.5 text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-md transition-colors"
-                    >
+                      className="px-3 py-1.5 text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-md transition-colors" prefetch={false}>
                       {country.name}
                     </Link>
                   ))}
@@ -478,8 +459,7 @@ export default function Navbar() {
                     key={show.id}
                     href={`/tv/${show.id}`}
                     onClick={() => setActiveDropdown(null)}
-                    className="group flex gap-3 items-center p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800/60 transition-colors"
-                  >
+                    className="group flex gap-3 items-center p-2 rounded-md hover:bg-zinc-50 dark:hover:bg-zinc-800/60 transition-colors" prefetch={false}>
                     <div className="relative w-12 h-16 rounded overflow-hidden flex-shrink-0 bg-zinc-200 dark:bg-zinc-800">
                       {show.poster_path && (
                         <Image
@@ -513,29 +493,25 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-          >
+            className="block px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800" prefetch={false}>
             Home
           </Link>
           <Link
             href="/movie"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-          >
+            className="block px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800" prefetch={false}>
             Movies
           </Link>
           <Link
             href="/tv"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-          >
+            className="block px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800" prefetch={false}>
             TV Shows
           </Link>
           <Link
             href="/people"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-          >
+            className="block px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800" prefetch={false}>
             People
           </Link>
 
@@ -544,16 +520,14 @@ export default function Navbar() {
               <Link
                 href={`/profile/${user.username}`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-2 px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-              >
+                className="flex items-center gap-2 px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800" prefetch={false}>
                 <User className="w-5 h-5 text-amber-500" />
                 Profile (@{user.username})
               </Link>
               <Link
                 href="/settings"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-2 px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-              >
+                className="flex items-center gap-2 px-3 py-2 text-base font-medium text-zinc-800 dark:text-zinc-200 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800" prefetch={false}>
                 <Settings className="w-5 h-5 text-zinc-500" />
                 Settings
               </Link>
@@ -575,15 +549,13 @@ export default function Navbar() {
               <Link
                 href="/login"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex-1 text-center py-2 text-sm font-medium border border-zinc-300 dark:border-zinc-700 rounded-md"
-              >
+                className="flex-1 text-center py-2 text-sm font-medium border border-zinc-300 dark:border-zinc-700 rounded-md" prefetch={false}>
                 Log in
               </Link>
               <Link
                 href="/signup"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex-1 text-center py-2 text-sm font-medium bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-md"
-              >
+                className="flex-1 text-center py-2 text-sm font-medium bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-md" prefetch={false}>
                 Sign up
               </Link>
             </div>

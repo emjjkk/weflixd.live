@@ -51,8 +51,7 @@ export default function GenresGrid() {
           <Link
             key={genre.id}
             href={`/${tab}?genres=${genre.slug}&page=1`}
-            className="flex items-center justify-center p-3 rounded-md border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-xs font-medium text-zinc-800 dark:text-zinc-200 transition-colors shadow-xs"
-          >
+            className="flex items-center justify-center p-3 rounded-md border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-xs font-medium text-zinc-800 dark:text-zinc-200 transition-colors shadow-xs" prefetch={false}>
             {genre.name}
           </Link>
         ))}

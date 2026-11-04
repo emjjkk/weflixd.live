@@ -57,16 +57,16 @@ export default function NotificationsView() {
         <div className="space-y-3">
           {activity.map(item => (
             <article key={item.id} className="flex gap-4 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-xs">
-              <Link href={`/profile/${item.username}`} className="relative w-10 h-10 shrink-0 rounded-full overflow-hidden bg-zinc-200 dark:bg-zinc-800">
+              <Link href={`/profile/${item.username}`} className="relative w-10 h-10 shrink-0 rounded-full overflow-hidden bg-zinc-200 dark:bg-zinc-800" prefetch={false}>
                 {item.user_avatar ? <Image src={item.user_avatar} alt={item.username} fill className="object-cover" referrerPolicy="no-referrer" /> : null}
               </Link>
               <div className="min-w-0 flex-1 space-y-1">
                 <div className="flex items-center gap-2 text-sm text-zinc-800 dark:text-zinc-200">
                   {item.type === 'review' ? <MessageSquare className="w-4 h-4 text-blue-500 shrink-0" /> : <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />}
-                  <Link href={`/profile/${item.username}`} className="font-bold hover:underline">{item.display_name || item.username}</Link>
+                  <Link href={`/profile/${item.username}`} className="font-bold hover:underline" prefetch={false}>{item.display_name || item.username}</Link>
                   <span className="text-zinc-500">{item.type === 'review' ? 'reviewed' : 'watched'}</span>
                 </div>
-                <Link href={`/${item.media_type}/${item.media_id}`} className="block text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400">{item.media_title}</Link>
+                <Link href={`/${item.media_type}/${item.media_id}`} className="block text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400" prefetch={false}>{item.media_title}</Link>
                 {item.type === 'review' && item.content ? <p className="text-xs text-zinc-600 dark:text-zinc-300 line-clamp-2">{item.content}</p> : null}
                 <div className="flex items-center gap-3 text-[11px] text-zinc-500">
                   {item.rating ? <span className="inline-flex items-center gap-1"><Star className="w-3 h-3 text-amber-500 fill-amber-500" /> {item.rating}/5</span> : null}
